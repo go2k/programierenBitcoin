@@ -41,8 +41,7 @@ public class RateService {
         ResultSet rs=pStatSelectAll.executeQuery();
 
         while (rs.next()) {
-            Rate r = new Rate(rs.getLong("ts"), rs.getDouble("rateEUR"), rs.getDouble("rateUSD"));
-            rdb.add(r);
+            rdb.add( new Rate(rs.getLong("ts"), rs.getDouble("rateEUR"), rs.getDouble("rateUSD")));
         }
         return rdb;
     }
