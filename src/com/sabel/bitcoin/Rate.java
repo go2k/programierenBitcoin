@@ -65,7 +65,7 @@ public class Rate {
 
     @Override
     public String toString() {
-        return "TS: " + timestamp + ", USD: " + rateUSD + ", EUR: " + rateEUR ;
+        return "" + timestamp + "\t" + rateUSD + "\t" + rateEUR;
     }
 
 

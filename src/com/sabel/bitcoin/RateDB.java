@@ -64,7 +64,7 @@ public class RateDB {
 
         List<Rate> retlist = new ArrayList<>();
         for (Rate rate : list) {
-            if (rate.getTimestamp() >= beginTimestamp & rate.getTimestamp() <= endTimestamp) {
+            if (rate.getTimestamp() >= beginTimestamp && rate.getTimestamp() <= endTimestamp) {
                 retlist.add(rate);
             }
         }
