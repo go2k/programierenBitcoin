@@ -10,7 +10,7 @@ public class RateService {
     PreparedStatement pStatSelectAll;
 
     public RateService() throws SQLException {
-        this.connection = DriverManager.getConnection("jdbc:sqlite:d:\\ratedb.sqlite");
+        this.connection = DriverManager.getConnection("jdbc:sqlite:ratedb.sqlite");
         this.pStatInsert = connection.prepareStatement("insert into rates (ts, rateEUR, rateUSD) VALUES (?,?,?)");
         this.pStatSelect = connection.prepareStatement("select ts, rateEUR, rateUSD from rates order by ts desc limit 1");
         this.pStatSelectAll = connection.prepareStatement("select ts, rateEUR, rateUSD from rates order by ts asc");
