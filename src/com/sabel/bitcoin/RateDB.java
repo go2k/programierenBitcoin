@@ -40,23 +40,14 @@ public class RateDB {
     }
 
     public Rate getLastRate() {
-//        Collections.sort(list, new Comparator<Rate>() {
-//            @Override
-//            public int compare(int o1.getTimestamp, Rate o2.getTimestamp) {
-//                return 0;
-//            }
-//        });
-//        return list.get(list.size());
-
-
         Rate returnRate = null;
         for (Rate rate : list) {
             if (returnRate != null) {
                 if (rate.getTimestamp() > returnRate.getTimestamp()) {
                     returnRate = rate;
-                } else {
-                    returnRate = rate;
                 }
+            }else {
+                returnRate = rate;
             }
         }
         return returnRate;

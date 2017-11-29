@@ -67,4 +67,6 @@ public class Rate {
     public String toString() {
         return "TS: " + timestamp + ", USD: " + rateUSD + ", EUR: " + rateEUR ;
     }
+
+
 }

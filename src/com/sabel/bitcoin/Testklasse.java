@@ -19,6 +19,8 @@ public class Testklasse {
 
         System.out.println("--getLastRate2---------------------------------");
         System.out.println(rdb.getLastRate2());
+        System.out.println("--getLastRate---------------------------------");
+        System.out.println(rdb.getLastRate());
         System.out.println("-----------------------------------------------\n\r");
 
         RateService rateService = new RateService();
