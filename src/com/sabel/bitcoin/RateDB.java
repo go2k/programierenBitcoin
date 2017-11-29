@@ -1,9 +1,6 @@
 package com.sabel.bitcoin;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class RateDB {
 
@@ -46,7 +43,7 @@ public class RateDB {
                 if (rate.getTimestamp() > returnRate.getTimestamp()) {
                     returnRate = rate;
                 }
-            }else {
+            } else {
                 returnRate = rate;
             }
         }
@@ -73,6 +70,18 @@ public class RateDB {
 
 
     public Rate remove(long timestamp) {
+        Iterator<Rate> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            Rate nextRate = iterator.next();
+            if (nextRate.getTimestamp() == timestamp) {
+                iterator.remove();
+                return nextRate;
+            }
+        }
+        return null;
+    }
+
+    public Rate removeMeine(long timestamp) {
         Rate r = null;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getTimestamp() == timestamp) {
@@ -86,12 +95,24 @@ public class RateDB {
 
     @Override
     public String toString() {
-        String s = "";
+
+        StringBuilder stringBuilder = new StringBuilder("Zeitstempel RateinEuro");
         for (Rate rate : list) {
-            s += rate.getTimestamp() + " " + rate.getRateEUR() + "\r\n";
+            stringBuilder.append(rate.getTimestamp() + " " + rate.getRateEUR() + String.format("%n"));
         }
-        return s;
+        return stringBuilder.toString();
+
 
     }
+
+//    @Override
+//    public String toString() {
+//        String s = "";
+//        for (Rate rate : list) {
+//            s += rate.getTimestamp() + " " + rate.getRateEUR() + "\r\n";
+//        }
+//        return s;
+//
+//    }
 }
 
