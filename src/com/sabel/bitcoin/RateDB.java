@@ -96,7 +96,7 @@ public class RateDB {
     @Override
     public String toString() {
 
-        StringBuilder stringBuilder = new StringBuilder("Zeitstempel RateinEuro");
+        StringBuilder stringBuilder = new StringBuilder("Zeitstempel RateInEuro" + String.format("%n"));
         for (Rate rate : list) {
             stringBuilder.append(rate.getTimestamp() + " " + rate.getRateEUR() + String.format("%n"));
         }
