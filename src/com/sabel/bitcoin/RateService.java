@@ -27,6 +27,7 @@ public class RateService {
             this.connection.close();
         }
         this.connection = null;
+
     }
 
     public void save(Rate rate) throws SQLException {
